@@ -65,7 +65,7 @@ class PriceData {
 }
 
 Future<List<MutualFund>> fetchMutualFunds() async {
-  final response = await http.get(Uri.parse('https://api.mfapi.in/mf'));
+  final response = await http.get(Uri.parse('https://api.example/mf'));
 
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
@@ -76,7 +76,7 @@ Future<List<MutualFund>> fetchMutualFunds() async {
 }
 
 Future<MutualFundDetail> fetchMutualFundDetail(String schemeCode) async {
-  final response = await http.get(Uri.parse('https://api.mfapi.in/mf/$schemeCode'));
+  final response = await http.get(Uri.parse('https://api.example/mf/$schemeCode'));
 
   if (response.statusCode == 200) {
     final data = json.decode(response.body);
